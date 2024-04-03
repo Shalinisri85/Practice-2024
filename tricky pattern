@@ -1,0 +1,54 @@
+   1 
+  3 2 
+ 6 5 4 
+10 9 8 7 
+10 9 8 7 
+ 6 5 4 
+  3 2 
+   1 
+
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+      Scanner scanner=new Scanner(System.in);
+     
+       int number=scanner.nextInt();
+        int result=1;
+        for(int i=0;i<number;i++){
+
+          for(int j=0;j<number-i-1;j++){
+            System.out.print(" ");
+          }
+          result+=i;
+          int temp=result;
+          for(int k=number-i-1;k<number;k++){
+            System.out.print(temp+" ");
+            temp--;
+            
+          }
+          result++;
+          System.out.println();
+        }
+        result=0;
+        for(int i=1;i<=number;i++)result+=i;
+        for(int i=number-1;i>=0;i--){
+
+          for(int j=i+1;j<number;j++){
+            System.out.print(" ");
+          }
+         
+          for(int k=number-i-1;k<number;k++){
+            System.out.print(result+" ");
+            result--;
+            
+          }
+   
+          System.out.println();
+        }
+        
+        
+      
+      
+    }
+}
