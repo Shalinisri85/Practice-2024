@@ -1,0 +1,30 @@
+3. Equilibrium index of an array is an index such that 
+the sum of elements at lower indexes is equal to the sum 
+of elements at higher indexes. For example, in an array A:
+Example :
+Input: A[] = {-7, 1, 5, 2, -4, 3, 0}
+Output: 3 
+3 is an equilibrium index, because:
+A[0] + A[1] + A[2] = A[4] + A[5] + A[6]
+Input: A[] = {1, 2, 3}
+Output: -1
+
+import java.util.*;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+      Scanner scanner=new Scanner(System.in);
+      int number=scanner.nextInt();
+      int[] arr=new int[number];
+      int lowerindex=0;
+      int higherindex=0;
+      for(int i=0;i<number;i++){
+        arr[i]=scanner.nextInt();
+        if(i>number/2)higherindex+=arr[i];
+        else if(i<number/2)lowerindex+=arr[i];
+        
+      }
+      System.out.println((lowerindex==higherindex)?arr[number/2]:-1);    
+      
+  }
+}
