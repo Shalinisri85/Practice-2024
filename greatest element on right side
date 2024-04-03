@@ -1,0 +1,32 @@
+ Replace every element with the greatest element on right side
+Last Updated: 06-05-2019
+Given an array of integers, replace every element with the next 
+greatest element (greatest element on the right side) in the array.
+Since there is no element next to the last element, replace it with -1.
+For example, if the array is {16, 17, 4, 3, 5, 2}, then it should be
+modified to {17, 5, 5, 5, 2, -1}.
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner scanner=new Scanner(System.in);
+      int number=scanner.nextInt();
+      int[] arr=new int[number];
+      for(int index=0;index<number;index++){
+        arr[index]=scanner.nextInt();
+      }
+      for(int i=0;i<number-1;i++){
+        int max=-99999999;
+        for(int j=i+1;j<number;j++){
+          if(arr[j]>=max){
+            max=arr[j];
+          }
+          else continue;
+        }
+        System.out.print(max+" ");
+      }
+      System.out.print("-1");
+  }
+}
