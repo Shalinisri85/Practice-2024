@@ -1,0 +1,25 @@
+2. Given a Boolean matrix mat[M][N] of size M X N,
+modify it such that if a matrix cell mat[i][j] is 1 
+then make its adjacent cells as 0.
+
+
+import java.util.*;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+      Scanner scanner=new Scanner(System.in);
+      int number=scanner.nextInt();
+      int[][] arr=new int[number][number];
+      for(int[] a:arr){
+        Arrays.fill(a,1);
+      }
+      for(int i=0;i<number;i++){
+        for(int j=0;j<number;j++){
+          if(i!=j)System.out.print(arr[i][j]+" ");
+          else System.out.print("0 ");
+        }
+        System.out.println();
+      }
+      
+  }
+}
